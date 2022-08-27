@@ -1,7 +1,12 @@
+import { Wrapper } from "./styles";
+
 export default function Home() {
   return (
-    <span>
-      hello nextcart
-    </span>
+    <Wrapper>
+      <span>
+        hello nextcart
+      </span>
+    </Wrapper>
+
   )
 }
