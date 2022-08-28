@@ -18,6 +18,7 @@ export const WrapperInput = styled.div<PropsWrapperInput>`
 export const Label = styled.a`
   color: #fff;
   font-weight: 700;
+  font-size: 1.2rem;
 
   margin-bottom: 0.50rem;
 `;
