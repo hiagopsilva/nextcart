@@ -19,4 +19,6 @@ export const SubHeaderStyled = styled(SubHeader)`
 
 export const Content = styled.div`
   width: 35rem;
+
+  margin-top: 2rem;
 `;

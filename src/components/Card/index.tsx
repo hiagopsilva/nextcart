@@ -14,7 +14,6 @@ const Card: FC<Props> = ({name, inputDate, finalDate, avatar}) => {
   return (
     <Wrapper>
       <ModalInfo />
-      
       <Avatar src={avatar} />
       <ContentCard>
         <TitleCard>{name}</TitleCard>
