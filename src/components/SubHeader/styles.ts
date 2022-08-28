@@ -1,12 +1,11 @@
 import styled from 'styled-components';
+import Button from '../Button';
 
 export const Wrapper = styled.div`
   width: 40.25rem;
 
   display: flex;
   align-items: center;
-
-  margin: 5.18rem 0 1rem;
 `;
 
 export const Text = styled.div`
@@ -27,5 +26,9 @@ export const Text = styled.div`
 
     margin-left: 10px;
   }
+`;
+
+export const ButtonStyled = styled(Button)`
+  margin-left: auto;
 `;
 
