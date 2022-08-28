@@ -22,3 +22,5 @@ export const Content = styled.div`
 
   margin-top: 2rem;
 `;
+
+export default Wrapper;
