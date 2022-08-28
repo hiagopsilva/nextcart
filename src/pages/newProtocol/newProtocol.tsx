@@ -3,15 +3,18 @@ import Button from '../../components/Button';
 import { SubHeaderStyled } from '../styles';
 import Router from 'next/router';
 
-import { TextInputStyled, Wrapper, WrapperButtons, WrapperForm } from './styles'; 
+import { AvatarStyled, Text, TextInputStyled, Wrapper, WrapperAvatars, WrapperButtons, WrapperForm } from './styles'; 
 import { FormikProps, useFormikContext } from 'formik';
 import Loading from '../../components/Loading';
+import { Avatars } from '../../utils/enum';
 
 type Props = {
-  loading: boolean
+  loading: boolean;
+  avatar: string;
+  handleSelectAvatar: (avatar: string) => void;
 }
 
-export default function NewProtocol({loading}: Props) {
+export default function NewProtocol({loading, handleSelectAvatar, avatar}: Props) {
   const {
     values,
     submitForm,
@@ -73,6 +76,15 @@ export default function NewProtocol({loading}: Props) {
           error={touched.tipo ? !!errors.tipo : false}
           name="tipo"
         />
+
+        <WrapperAvatars>
+          <Text>Selecione o avatar</Text>
+          <div className="content-avatars">
+            {Avatars.map((item: string) => (
+              <AvatarStyled key={item} src={item} onClick={() => handleSelectAvatar(item)} className={avatar === item ? 'active' : ''} />
+            ))}
+          </div>
+        </WrapperAvatars>
 
         <WrapperButtons>
           <Button 

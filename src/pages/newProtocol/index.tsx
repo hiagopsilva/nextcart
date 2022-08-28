@@ -9,6 +9,7 @@ import { transformDateToUnix } from '../../utils/helpers';
 
 export default function NewProtocolContainer() {
   const [loading, setLoading] = useState(false);
+  const [avatar, setAvatar] = useState('');
 
   const submitFormValues = async (values: Protocol.Create) => {
     setLoading(true)
@@ -17,11 +18,15 @@ export default function NewProtocolContainer() {
       tipo: values.tipo,
       entrada: transformDateToUnix(values.entrada),
       vencimento: transformDateToUnix(values.vencimento),
-      apresentante: values.apresentante 
+      apresentante: values.apresentante
     })
 
     Router.push('/')
     setLoading(false)
+  }
+
+  const handleSelectAvatar = (avatar: string) => {
+    setAvatar(avatar);
   }
 
   return (
@@ -30,7 +35,11 @@ export default function NewProtocolContainer() {
       // validationSchema={validationForm}
       onSubmit={submitFormValues}
     >
-      <NewProtocol loading={loading} />
+      <NewProtocol 
+        loading={loading}
+        avatar={avatar}
+        handleSelectAvatar={handleSelectAvatar}
+      />
     </Formik>
   )
 };
