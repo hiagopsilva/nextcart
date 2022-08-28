@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Button from '../Button';
 
 export const Wrapper = styled.div`
-  width: 40.25rem;
 
   display: flex;
   align-items: center;
