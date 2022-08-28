@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
 `;
 
 export const SubHeaderStyled = styled(SubHeader)`
+  width: 35rem;
   margin: 3.75rem 0 1rem;
 `;
 
