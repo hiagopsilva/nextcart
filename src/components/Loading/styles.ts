@@ -12,6 +12,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  top: 0;
 `;
 
 export const LoadingComponent = styled(ReactLoading).attrs(props => ({

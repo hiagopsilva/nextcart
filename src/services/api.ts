@@ -6,5 +6,11 @@ class ProtocolAPI {
 
     return data;
   };
+
+  static create = async (values: Protocol.Create): Promise<any> => {
+    const { data } = await request.post('/create', values);
+
+    return data;
+  };
 }
 export default ProtocolAPI;

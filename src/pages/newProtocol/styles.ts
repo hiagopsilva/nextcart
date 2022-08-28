@@ -47,7 +47,6 @@ export const SubHeaderStyled = styled(SubHeader)`
   margin: 5.18rem 0 1rem;
 
   width: 40.25rem;
-  background-color: red;
 `;
 
 export default Wrapper;

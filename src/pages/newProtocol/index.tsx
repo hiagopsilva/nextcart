@@ -1,33 +1,37 @@
-import React, { FC } from 'react';
-import Button from '../../components/Button';
-import { SubHeaderStyled } from '../styles';
+import React, { useState } from 'react';
+
+import { Formik } from 'formik';
+import { initialValues } from './form';
+import NewProtocol from './newProtocol';
+import ProtocolAPI from '../../services/api';
 import Router from 'next/router';
+import { transformDateToUnix } from '../../utils/helpers';
 
-import { TextInputStyled, Wrapper, WrapperButtons, WrapperForm } from './styles'; 
+export default function NewProtocolContainer() {
+  const [loading, setLoading] = useState(false);
 
-export default function NewProtocol() {
-  
+  const submitFormValues = async (values: Protocol.Create) => {
+    setLoading(true)
+    await ProtocolAPI.create({
+      protocolo: values.protocolo,
+      tipo: values.tipo,
+      entrada: transformDateToUnix(values.entrada),
+      vencimento: transformDateToUnix(values.vencimento),
+      apresentante: values.apresentante 
+    })
+
+    Router.push('/')
+    setLoading(false)
+  }
+
   return (
-    <Wrapper>
-      <SubHeaderStyled title="Formulário" text="novos pedidos e edição" />
-      
-      <WrapperForm>
-        <TextInputStyled label="Protocolo"  />
-
-        <div className="line">
-          <TextInputStyled label="Data de Entrada" small date  />
-          <TextInputStyled label="Data de Vencimento" small date />
-        </div>
-
-        <TextInputStyled label="Apresentante"  />
-        <TextInputStyled label="Tipo do Protocolo"  />
-
-        <WrapperButtons>
-          <Button label="Cancelar" withoutBackground onClick={() => Router.push('./')} />
-          <Button label="Salvar" />
-        </WrapperButtons>
-      </WrapperForm>
-    </Wrapper>
+    <Formik 
+      initialValues={initialValues}
+      // validationSchema={validationForm}
+      onSubmit={submitFormValues}
+    >
+      <NewProtocol loading={loading} />
+    </Formik>
   )
 };
 
