@@ -21,7 +21,7 @@ export default function NewProtocol() {
         <TextInputStyled label="Tipo do Protocolo"  />
 
         <WrapperButtons>
-          <Button label="Cancelar" withoutBackground />
+          <Button label="Cancelar" withoutBackground onClick={() => window.location.href = './'} />
           <Button label="Salvar" />
         </WrapperButtons>
       </WrapperForm>
