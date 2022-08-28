@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { formatDate } from '../../utils/helpers';
 import ModalInfo from '../ModalInfo';
 
 import { Arrow, Avatar, ContentCard, IconUpdate, Name, TextCard, TextHeader, TitleCard, Wrapper, WrapperModal } from './styles'; 
@@ -18,9 +19,9 @@ const Card: FC<Props> = ({name, apresentante, typeProtocol, inputDate, finalDate
       <ModalInfo apresentante={apresentante} typeProtocol={typeProtocol} />
       <Avatar src={avatar} />
       <ContentCard>
-        <TitleCard>{name}</TitleCard>
-        <TextCard>{inputDate}</TextCard>
-        <TextCard>{finalDate}</TextCard>
+        <TitleCard>Protocolo:{name}</TitleCard>
+        <TextCard>Vencimento: {formatDate(inputDate)}</TextCard>
+        <TextCard>Entrada: {formatDate(finalDate)}</TextCard>
       </ContentCard>
       <IconUpdate className="logo" />
     </Wrapper>
