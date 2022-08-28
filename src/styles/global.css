@@ -16,6 +16,9 @@
   }
 }
 
+body {
+  background: #2F3A58;
+}
 
 
 body, input, textarea, select, button {

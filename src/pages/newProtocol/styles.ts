@@ -3,7 +3,6 @@ import TextInput from '../../components/TextInput';
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 80vh;
 
   background: #2F3A58;
 
@@ -11,6 +10,8 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  padding-bottom: 6rem;
 `;
 
 export const WrapperForm = styled.div`
