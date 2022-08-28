@@ -4,13 +4,13 @@ export const Wrapper = styled.div`
   background-color: #FFFFFF;
 
   width: 100%;
-  height: 157px;
+  height: 9.81rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   img {
-    height: 107px;
+    height: 6.68rem;
   }
 `;
