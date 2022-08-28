@@ -9,10 +9,6 @@ export const WrapperInput = styled.div<PropsWrapperInput>`
 
   display: flex;
   flex-direction: column;
-
-  & + & {
-    margin-top: 2rem;
-  }
 `;
 
 export const Label = styled.a`
@@ -24,11 +20,32 @@ export const Label = styled.a`
 `;
 
 export const Input = styled.input`
+  height: 3.62rem;
+  width: ${props => props.type === 'date' ? '90%' : '100%'};
+
+  border: none;
+
+  &:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+  }
+`;
+
+export const ContentInput = styled.div`
   width: 100%;
   height: 3.62rem;
   border-radius: 8px;
   border: none;
 
   padding: 0 8px;  
+  background-color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
+
+export const IconDate = styled.img.attrs({
+  src: './calendar.svg'
+})``;
 

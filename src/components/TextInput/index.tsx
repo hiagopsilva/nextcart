@@ -1,17 +1,22 @@
 import React from 'react';
 
-import { Input, Label, WrapperInput } from './styles';
+import { ContentInput, IconDate, Input, Label, WrapperInput } from './styles';
 
 type Props = {
   label: string;
-  small?: boolean
+  small?: boolean;
+  date?: boolean;
 }
 
-export default function TextInput({label, small}: Props) {
+export default function TextInput({label, small, date, ...rest}: Props) {
   return (
-    <WrapperInput small={small}>
+    <WrapperInput small={small} {...rest}>
       <Label>{label}</Label>
-      <Input />
+
+      <ContentInput>
+        <Input type={date && 'date'} />
+        {date && <IconDate />}
+      </ContentInput>
     </WrapperInput>
   )
 };
