@@ -1,3 +1,4 @@
+import Router from "next/router";
 import Card from "../components/Card";
 import {Content,  SubHeaderStyled, Wrapper } from "./styles";
 
@@ -8,7 +9,7 @@ export default function Home() {
         title="Pedidos" 
         text="últimos pedidos" 
         labelButton="Novo Pedido"
-        onClick={() => window.location.href = '/newProtocol'}
+        onClick={() => Router.push('/newProtocol')}
       />
       
       <Content>
