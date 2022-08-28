@@ -1,8 +1,22 @@
 import Router from "next/router";
+import { useEffect, useState } from "react";
 import Card from "../components/Card";
+import ProtocolAPI from "../services/api";
 import {Content,  SubHeaderStyled, Wrapper } from "./styles";
 
 export default function Home() {
+  const [dataProtocols, setDataProtocols] = useState([]);
+
+  const fetchProtocols = async () => {
+    const response = await ProtocolAPI.list()
+
+    setDataProtocols(response);
+  }
+
+  useEffect(() => {
+    fetchProtocols()
+  },[]);
+
   return (
     <Wrapper>
       <SubHeaderStyled 
@@ -13,13 +27,15 @@ export default function Home() {
       />
       
       <Content>
-        {[1,2,3,5,6,7,8].map((item, key) => (
+        {dataProtocols.map((item: Protocol.List) => (
           <Card
-            key={key} 
-            name='Fernando Santos'
-            inputDate="28/08/2022"
-            finalDate="28/08/2022"
-            avatar="https://gravatar.com/avatar/f6152e4acd50e543936441fc918b2606?s=400&d=robohash&r=x"
+            key={item._id} 
+            name={item.protocolo}
+            inputDate={item.entrada}
+            finalDate={item.vencimento}
+            avatar={item.imagem}
+            apresentante={item.apresentante}
+            typeProtocol={item.tipo}
           />
         ))}
       </Content>

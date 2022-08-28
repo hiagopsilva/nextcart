@@ -2,12 +2,17 @@ import React from 'react';
 
 import { Arrow, Name, TextHeader, Wrapper } from './styles';
 
-export default function ModalInfo() {
+type Props = {
+  apresentante: string
+  typeProtocol: string
+}
+
+export default function ModalInfo({apresentante ,typeProtocol}: Props) {
   return (
     <Wrapper className="modal">
       <TextHeader>Informações adicionais</TextHeader>
-      <Name>Hiago Prates</Name>
-      <Name>123456789</Name>
+      <Name>{apresentante}</Name>
+      <Name>{typeProtocol}</Name>
       <Arrow />
     </Wrapper>
   )

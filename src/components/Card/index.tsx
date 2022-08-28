@@ -5,15 +5,17 @@ import { Arrow, Avatar, ContentCard, IconUpdate, Name, TextCard, TextHeader, Tit
 
 type Props = {
   name: string;
-  inputDate: string;
-  finalDate: string;
+  inputDate: number;
+  finalDate: number;
   avatar: string;
+  apresentante: string;
+  typeProtocol: string;
 };
 
-const Card: FC<Props> = ({name, inputDate, finalDate, avatar}) => {
+const Card: FC<Props> = ({name, apresentante, typeProtocol, inputDate, finalDate, avatar}) => {
   return (
     <Wrapper>
-      <ModalInfo />
+      <ModalInfo apresentante={apresentante} typeProtocol={typeProtocol} />
       <Avatar src={avatar} />
       <ContentCard>
         <TitleCard>{name}</TitleCard>
