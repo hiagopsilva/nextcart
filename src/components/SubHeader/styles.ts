@@ -8,9 +8,8 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
-export const Text = styled.div`
+export const WrapperText = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
 
   span.title {

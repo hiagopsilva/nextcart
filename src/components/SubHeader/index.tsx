@@ -1,7 +1,7 @@
 import React from 'react';
 import {isEmpty} from 'lodash'
 
-import { ButtonStyled, Text, Wrapper } from './styles'; 
+import { ButtonStyled, WrapperText, Wrapper } from './styles'; 
 
 type Props = {
   title: string;
@@ -13,10 +13,10 @@ type Props = {
 export default function SubHeader({title, text, labelButton, onClick, ...rest}: Props) {
   return (
     <Wrapper {...rest}>
-      <Text>
+      <WrapperText>
         <span className="title">{title} </span>
         <span className="content-text"> | {text}</span>
-      </Text>
+      </WrapperText>
 
     {!isEmpty(labelButton) && (
       <ButtonStyled label={labelButton} onClick={onClick} />
