@@ -19,7 +19,7 @@
 
 
 body, input, textarea, select, button {
-  font: 400 1rem sans-serif;
+  font: 400 1rem 'Nunito Sans', sans-serif;
 }
 
 button {
