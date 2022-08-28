@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import SubHeader from '../../components/SubHeader';
 import TextInput from '../../components/TextInput';
 
 export const Wrapper = styled.div`
@@ -40,4 +41,8 @@ export const WrapperButtons = styled.div`
   button + button {
     margin-left: 1.68rem;
   }
+`;
+
+export const SubHeaderStyled = styled(SubHeader)`
+  margin: 5.18rem 0 1rem;
 `;

@@ -1,13 +1,14 @@
 import React, { FC } from 'react';
 import Button from '../../components/Button';
-import SubHeader from '../../components/SubHeader';
+import { SubHeaderStyled } from '../styles';
 
 import { TextInputStyled, Wrapper, WrapperButtons, WrapperForm } from './styles'; 
 
 export default function NewProtocol() {
   return (
     <Wrapper>
-      <SubHeader title="Formulário" text="novos pedidos e edição" />
+      <SubHeaderStyled title="Formulário" text="novos pedidos e edição" />
+      
       <WrapperForm>
         <TextInputStyled label="Protocolo"  />
 
