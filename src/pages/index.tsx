@@ -4,7 +4,12 @@ import {Content,  SubHeaderStyled, Wrapper } from "./styles";
 export default function Home() {
   return (
     <Wrapper>
-      <SubHeaderStyled title="Pedidos" text="últimos pedidos" labelButton="Novo Pedido"/>
+      <SubHeaderStyled 
+        title="Pedidos" 
+        text="últimos pedidos" 
+        labelButton="Novo Pedido"
+        onClick={() => window.location.href = '/newProtocol'}
+      />
       
       <Content>
         {[1,2,3,5,6,7,8].map((item, key) => (

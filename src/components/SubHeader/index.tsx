@@ -7,9 +7,10 @@ type Props = {
   title: string;
   text: string;
   labelButton?: string;
+  onClick?: () => void;
 };
 
-export default function SubHeader({title, text, labelButton, ...rest}: Props) {
+export default function SubHeader({title, text, labelButton, onClick, ...rest}: Props) {
   return (
     <Wrapper {...rest}>
       <Text>
@@ -18,7 +19,7 @@ export default function SubHeader({title, text, labelButton, ...rest}: Props) {
       </Text>
 
     {!isEmpty(labelButton) && (
-      <ButtonStyled label={labelButton} />
+      <ButtonStyled label={labelButton} onClick={onClick} />
     )}
     </Wrapper>
   )
