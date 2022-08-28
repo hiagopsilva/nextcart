@@ -4,7 +4,8 @@ const nextConfig = {
   swcMinify: true,
   compiler: {
     styledComponents: true,
-  }
+  },
+  pageExtensions: ['index.tsx', 'styles.ts', 'index.jsx', 'index.js']
 }
 
 module.exports = nextConfig
