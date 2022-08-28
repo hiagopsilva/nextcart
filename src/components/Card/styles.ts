@@ -126,5 +126,5 @@ export const Arrow = styled.div`
 
   margin-top: 26px;
 
-  transform: rotate(45deg); /* Equal to rotateZ(45deg) */
+  transform: rotate(45deg);
 `;
