@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { Avatar, ContentCard, IconUpdate, TextCard, TitleCard, Wrapper } from './styles'; 
+import { Arrow, Avatar, ContentCard, IconUpdate, Name, TextCard, TextHeader, TitleCard, Wrapper, WrapperModal } from './styles'; 
 
 type Props = {
   name: string;
@@ -11,15 +11,26 @@ type Props = {
 
 const Card: FC<Props> = ({name, inputDate, finalDate, avatar}) => {
   return (
-    <Wrapper>
-      <Avatar src={avatar} />
-      <ContentCard>
-        <TitleCard>{name}</TitleCard>
-        <TextCard>{inputDate}</TextCard>
-        <TextCard>{finalDate}</TextCard>
-      </ContentCard>
-      <IconUpdate className="logo" />
-    </Wrapper>
+    <>
+     
+      <Wrapper>
+        <WrapperModal className="modal">
+          <TextHeader>Informações adicionais</TextHeader>
+          <Name>Hiago Prates</Name>
+          <Name>123456789</Name>
+          <Arrow />
+        </WrapperModal>
+        
+        <Avatar src={avatar} />
+        <ContentCard>
+          <TitleCard>{name}</TitleCard>
+          <TextCard>{inputDate}</TextCard>
+          <TextCard>{finalDate}</TextCard>
+        </ContentCard>
+        <IconUpdate className="logo" />
+      </Wrapper>
+    </>
+
   )
 };
 
