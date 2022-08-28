@@ -9,4 +9,12 @@ declare namespace Protocol {
     vencimento: number
   };
 
+  declare type Create = {
+    protocolo: string,
+    apresentante: string,
+    tipo: string,
+    entrada: number,
+    vencimento: number
+  };
+
 }
