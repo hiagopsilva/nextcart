@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { formatDate } from '../../utils/helpers';
 import ModalInfo from '../ModalInfo';
 
-import { Arrow, Avatar, ContentCard, IconUpdate, Name, TextCard, TextHeader, TitleCard, Wrapper, WrapperModal } from './styles'; 
+import { Arrow, AvatarStyled, ContentCard, IconUpdate, Name, TextCard, TextHeader, TitleCard, Wrapper, WrapperModal } from './styles'; 
 
 type Props = {
   name: string;
@@ -17,7 +17,7 @@ const Card: FC<Props> = ({name, apresentante, typeProtocol, inputDate, finalDate
   return (
     <Wrapper>
       <ModalInfo apresentante={apresentante} typeProtocol={typeProtocol} />
-      <Avatar src={avatar} />
+      <AvatarStyled src={avatar} />
       <ContentCard>
         <TitleCard>Protocolo:{name}</TitleCard>
         <TextCard>Vencimento: {formatDate(inputDate)}</TextCard>

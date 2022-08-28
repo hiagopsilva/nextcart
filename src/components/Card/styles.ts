@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Avatar from '../Avatar';
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -39,13 +40,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Avatar = styled.img`
-  width: 6.18rem;
-
-  border: 5px solid #2F3A58;
-  border-radius: 50%;
-  background: #50E485;
-`;
+export const AvatarStyled = styled(Avatar)``;
 
 export const ContentCard = styled.div`
   display: flex;
