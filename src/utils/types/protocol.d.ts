@@ -15,6 +15,7 @@ declare namespace Protocol {
     tipo: string,
     entrada: number,
     vencimento: number
+    imagem?: string
   };
 
 }

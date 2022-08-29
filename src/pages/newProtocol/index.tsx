@@ -18,7 +18,8 @@ export default function NewProtocolContainer() {
       tipo: values.tipo,
       entrada: transformDateToUnix(values.entrada),
       vencimento: transformDateToUnix(values.vencimento),
-      apresentante: values.apresentante
+      apresentante: values.apresentante,
+      imagem: avatar
     })
 
     Router.push('/')
